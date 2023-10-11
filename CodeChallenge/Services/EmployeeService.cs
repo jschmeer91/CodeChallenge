@@ -59,5 +59,26 @@ namespace CodeChallenge.Services
 
             return newEmployee;
         }
+
+        public ReportingStructure getReportingStructureById(string id)
+        {
+            if (!String.IsNullOrEmpty(id))
+            {
+                Employee employee = _employeeRepository.GetById(id);
+
+                if (employee != null) //still check for employee existing
+                {
+                    ReportingStructure reportingStructure = new ReportingStructure
+                    {
+                        Employee = employee,
+                        NumberOfReports = employee.GetTotalDirectReports()
+                    };
+
+                    return reportingStructure;
+                }
+            }
+
+            return null;
+        }
     }
 }
