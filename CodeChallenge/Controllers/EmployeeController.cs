@@ -43,11 +43,11 @@ namespace CodeChallenge.Controllers
         }
 
         [HttpGet("getReportingStructureById/{id}", Name = "getReportingStructureById")]
-        public IActionResult getReportingStructureById(String id)
+        public IActionResult GetReportingStructureById(String id)
         {
             _logger.LogDebug($"Received reporting structure get request for '{id}'");
 
-            ReportingStructure reportingStructure = _employeeService.getReportingStructureById(id);
+            ReportingStructure reportingStructure = _employeeService.GetReportingStructureById(id);
 
             if (reportingStructure == null)
                 return NotFound();

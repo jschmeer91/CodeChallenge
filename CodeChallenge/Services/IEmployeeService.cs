@@ -8,6 +8,6 @@ namespace CodeChallenge.Services
         Employee GetById(String id);
         Employee Create(Employee employee);
         Employee Replace(Employee originalEmployee, Employee newEmployee);
-        ReportingStructure getReportingStructureById(String id);
+        ReportingStructure GetReportingStructureById(String id);
     }
 }

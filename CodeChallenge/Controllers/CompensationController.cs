@@ -32,9 +32,9 @@ namespace CodeChallenge.Controllers
         }
 
         [HttpGet("{id}", Name = "getCompensationById")]
-        public IActionResult Compensation(String id)
+        public IActionResult GetCompensationById(String id)
         {
-            _logger.LogDebug($"Received employee get request for '{id}'");
+            _logger.LogDebug($"Received compensation get request for employee '{id}'");
 
             var compensation = _compensationService.GetByEmployeeId(id);
 

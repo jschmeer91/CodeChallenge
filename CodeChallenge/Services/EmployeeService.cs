@@ -57,7 +57,7 @@ namespace CodeChallenge.Services
             return newEmployee;
         }
 
-        public ReportingStructure getReportingStructureById(string id)
+        public ReportingStructure GetReportingStructureById(string id)
         {
             if (!String.IsNullOrEmpty(id))
             {
