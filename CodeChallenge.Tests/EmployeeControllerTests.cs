@@ -208,7 +208,6 @@ namespace CodeCodeChallenge.Tests.Integration
                 LastName = "Bono",
                 Position = "Singer/Song Writer",
             };
-            var requestContent = new JsonSerialization().ToJson(employee);
 
             // Execute
             var getRequestTask = _httpClient.GetAsync($"api/employee/getReportingStructureById/{employee.EmployeeId}");
