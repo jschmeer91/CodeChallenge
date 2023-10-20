@@ -36,7 +36,7 @@ namespace CodeCodeChallenge.Tests.Integration
         }
 
         [TestMethod]
-        public void CreateEmployee_Returns_Created()
+        public void CreateCompensation_Returns_Created()
         {
             // Arrange
             var compensation = new Compensation()
@@ -64,7 +64,7 @@ namespace CodeCodeChallenge.Tests.Integration
         }
 
         [TestMethod]
-        public void CreateEmployee_Returns_NotFound()
+        public void CreateCompensation_Returns_NotFound()
         {
             // Arrange
             var compensation = new Compensation()
