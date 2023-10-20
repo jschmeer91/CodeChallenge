@@ -140,49 +140,7 @@ namespace CodeCodeChallenge.Tests.Integration
             // Arrange
             Employee employee = new Employee()
             {
-                EmployeeId = "16a596ae-edd3-4847-99fe-c4518e82c86f",
-                Department = "Engineering",
-                FirstName = "Pete",
-                LastName = "Best",
-                Position = "Developer VI",
-                DirectReports = new List<Employee>()
-                {
-                    new Employee()
-                    {
-                        EmployeeId = "b7839309-3348-463b-a7e3-5de1c168beb3",
-                        FirstName = "Paul",
-                        LastName = "McCartney",
-                        Position = "Developer I",
-                        Department = "Engineering"
-                    },
-                    new Employee()
-                    {
-                        EmployeeId = "03aa1462-ffa9-4978-901b-7c001562cf6f",
-                        FirstName = "Ringo",
-                        LastName = "Starr",
-                        Position = "Developer V",
-                        Department = "Engineering",
-                        DirectReports = new List<Employee>()
-                        {
-                            new Employee()
-                            {
-                                EmployeeId = "62c1084e-6e34-4630-93fd-9153afb65309",
-                                FirstName = "Pete",
-                                LastName = "Best",
-                                Position = "Developer II",
-                                Department = "Engineering"
-                            },
-                            new Employee()
-                            {
-                                EmployeeId = "c0c2293d-16bd-4603-8e08-638a9d18b22c",
-                                FirstName = "George",
-                                LastName = "Harrison",
-                                Position = "Developer III",
-                                Department = "Engineering"
-                            }
-                        }
-                    }
-                }
+                EmployeeId = "16a596ae-edd3-4847-99fe-c4518e82c86f"
             };
 
             // Execute
@@ -193,6 +151,7 @@ namespace CodeCodeChallenge.Tests.Integration
             Assert.AreEqual(HttpStatusCode.OK, response.StatusCode);
             var reportingStructure = response.DeserializeContent<ReportingStructure>();
 
+            Assert.AreEqual(employee.EmployeeId, reportingStructure.Employee.EmployeeId);
             Assert.AreEqual(reportingStructure.NumberOfReports, 4);
         }
 
