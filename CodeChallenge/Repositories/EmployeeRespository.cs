@@ -28,7 +28,7 @@ namespace CodeChallenge.Repositories
         public Employee GetById(string id)
         {
             //due to how query loads, need to force data into memory so that we can properly iterate through it. Also makes sure that directReports is included in the employee get call. This is why I added ToList in this scenario.
-            return _employeeContext.Employees.Where(e => e.EmployeeId == id).ToList().SingleOrDefault(); 
+            return _employeeContext.Employees.ToList().SingleOrDefault(e => e.EmployeeId == id); 
         }
 
         public Task SaveAsync()
